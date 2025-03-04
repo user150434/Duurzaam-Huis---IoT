@@ -6,13 +6,13 @@ void setup() {
 
 void loop() {
   // set a voltage on D3
-  //digitalWrite(D3, HIGH);
+  digitalWrite(D3, HIGH);
   // wait a second
- //// delay(1000);
+  delay(1000);
   // remove voltage from D3
-  //digitalWrite(D3, LOW);
+  digitalWrite(D3, LOW);
   // wait 2 seconds
-  //delay(200);
+  delay(200);
 
 
     for (int i = 0; i <= 255; i += 10) { // Verhoog helderheid
