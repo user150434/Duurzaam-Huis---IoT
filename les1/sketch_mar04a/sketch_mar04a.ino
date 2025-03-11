@@ -15,13 +15,13 @@ void loop() {
   delay(200);
 
 
-    for (int i = 0; i <= 255; i += 10) { // Verhoog helderheid
+    for (int i = 0; i <= 280; i += 10) { // Verhoog helderheid
     analogWrite(D3, i);
     delay(50);
   }
   
   // LED dimmen
-  for (int i = 255; i >= 0; i -= 20) { // Verlaag helderheid
+  for (int i = 300; i >= 0; i -= 20) { // Verlaag helderheid
     analogWrite(D3, i);
     delay(50);
   }
