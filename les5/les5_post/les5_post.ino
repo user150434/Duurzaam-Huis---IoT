@@ -11,9 +11,12 @@ float HeatIndex = -1;
 // light sensor
 int Light = -1;
 
-
 void setup() {
+  pinMode(D6, OUTPUT);
+  pinMode(D5, OUTPUT);
+  pinMode(D3, OUTPUT);
   Serial.begin(115200);
+  
   
   SetupWifi();
   CheckWifi();
@@ -29,17 +32,18 @@ void loop() {
     Serial.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     Serial.println("Reading sensors\n");
     
-        loopSensors();
+     ReadDHT11();
 
-        Serial.println("Creating JSON\n");
+    Serial.println("Creating JSON\n");
 
-        CreateJSON();
-        SendJSONToSerial();
+    CreateJSON();
+    
+    Serial.println("Sending POST\n");
 
-        Serial.println("Sending POST\n");
-        SendPOST(jsonOut);
+    SendPOST(jsonOut
+    );
 
-        previousTime = currentTime;
+    previousTime = millis();
   }
 
   CheckWifi();

@@ -8,7 +8,7 @@ DHT dht(DHTPin, DHTTYPE);
   float temperature = round(dht.readTemperature()*10)/10;
   float humidity = round(dht.readHumidity()*10)/10;
   float heatIndex = round(dht.computeHeatIndex(temperature, humidity, false)*10)/10;
-  int ldrValue = analogRead(LDR_Pin);
+
   if(isnan(temperature) || isnan(humidity) || isnan(heatIndex))
     {
       Serial.println("DHT11 sensor error");
